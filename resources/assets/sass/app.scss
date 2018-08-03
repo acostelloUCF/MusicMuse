@@ -1,0 +1,165 @@
+// Variables
+@import "variables";
+
+// Bootstrap
+@import "~bootstrap/scss/bootstrap";
+
+$primary-overlay: rgba(0, 0, 0, 0.9);
+
+body {
+    padding-top: 90px;
+    background-color: #333;
+    margin-bottom: 100px;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+}
+
+.navbar {
+    box-shadow: 2px 2px 5px $primary;
+
+    .nav-item {
+        font-size: 1.2rem;
+        padding-right: 1.2rem;
+        border-right: 2px $primary;
+
+        .active {
+            border-left: $primary 3px solid;
+            padding-left: 0.5rem;
+        }
+    }
+}
+
+#latestPost,
+#postList,
+#bandShow,
+#contact,
+#postShow {
+    .card-header {
+        color: $secondary;
+        a {
+            color: $secondary;
+        }
+    }
+    .card-body {
+        border-top: 3px $primary solid;
+        color: $secondary;
+    }
+    .card-footer {
+        border-top: 1px $primary solid;
+        word-wrap: normal !important;
+    }
+}
+
+#tagShow{
+    .card-header {
+        color: $secondary;
+        a {
+            color: $white;
+        }
+    }
+    .card-body {
+        border-top: 3px $primary solid;
+        color: $secondary;
+    }
+}
+
+#showcase {
+    position: relative;
+    background: url("../images/highway.jpeg");
+    min-height: 600px;
+
+    .primary-overlay {
+        background: $primary-overlay;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+#showcaseImage {
+    box-shadow: 2px 2px 5px $primary;
+}
+
+.bg-black {
+    background: $black;
+}
+
+#navbarIcon,
+#bandFilterIcon {
+    color: $primary;
+}
+
+.nav-item {
+    color: $primary;
+}
+
+[data-toggle="collapse"] .fa:before {
+    content: "\f139";
+}
+
+[data-toggle="collapse"].collapsed .fa:before {
+    content: "\f13a";
+}
+
+#bandList {
+    .card {
+        min-height: 400px;
+        max-height: 800px;
+    }
+    .card-text {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        line-height: 16px; /* fallback */
+        max-height: 32px; /* fallback */
+        -webkit-line-clamp: 2; /* number of lines to show */
+        -webkit-box-orient: vertical;
+    }
+}
+
+.concert-list-item {
+    max-height: 420px;
+
+    img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+   
+
+    h2.concert-title {
+        // border-bottom: 2px $primary solid;
+    }
+
+    .list-group {
+        overflow: auto;
+    }
+}
+
+#showConcert{
+    .row{
+       max-height:400px;   
+    }
+
+}
+
+@media (max-width: 768px) {
+    #showcase {
+        min-height: 500px;
+
+        h1 {
+            font-size: 4rem;
+        }
+    }
+}
