@@ -8,7 +8,10 @@ class Concert extends Model
 {
     protected $fillable = [
         'title',
-        'description'
+        'description',
+        'venue_id',
+        'start_time',
+        'end_time'
     ];
 
     protected $hidden = ['pivot'];

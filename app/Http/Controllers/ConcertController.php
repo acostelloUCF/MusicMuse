@@ -46,7 +46,7 @@ class ConcertController extends Controller
      */
     public function show($id)
     {
-        return Concert::with('bands')->where('id',$id)->first();
+        return Concert::with('bands','venue')->where('id',$id)->first();
     }
 
     /**

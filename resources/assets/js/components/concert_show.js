@@ -8,6 +8,10 @@ import Moment from "react-moment";
 
 
 class ConcertShow extends Component {
+    constructor(props){
+        super(props);
+    }
+
     componentDidMount() {
         const { id } = this.props.match.params;
         this.props.fetchConcert(id);
@@ -19,10 +23,11 @@ class ConcertShow extends Component {
         if (!concert) {
             return renderLoadingSpinner();
         }
-
+        
+        console.log(concert);
         return (
             <section id="showConcert" className="mt-4">
-                <div className="container">
+                <div className="container bg-white">
                     <div className="row mb-2 concert-list-item h-100">
                         <div className="col-md-4 text-center d-none d-sm-inline">
                             <img
@@ -47,7 +52,9 @@ class ConcertShow extends Component {
                                             </Moment>
                                         </h4>
                                     </div>
-                                    <p>{}</p> 
+                                    <p>{concert.venue.name}</p> 
+                                    <p>{concert.venue.street}</p>
+                                    <p>{concert.venue.city+', '+concert.venue.state+' '+concert.venue.postal_code}</p>
                                 </div>
                             </div>
                         </div>
@@ -57,7 +64,7 @@ class ConcertShow extends Component {
                             {concert.description}
                         </div>
                         <div className="col-md-4">
-                            <ConcertMap isMarkerShown={true} lat={concert.lat} lng={concert.lng}/>
+                            <ConcertMap isMarkerShown={true} lat={concert.venue.lat} lng={concert.venue.lng}/>
                         </div>
                     </div>
 

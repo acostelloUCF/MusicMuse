@@ -17,12 +17,10 @@ class CreateConcertsTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->string('description');
-            $table->integer('venue_id');
+            $table->integer('venue_id')->unsigned();
             $table->dateTimeTz('start_time');
             $table->dateTimeTz('end_time');
             $table->timestamps();
-
-            $table->foreign('venue_id')->references('id')->on('venues');
         });
     }
 

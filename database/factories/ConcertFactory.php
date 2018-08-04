@@ -12,6 +12,7 @@ $factory->define(App\Concert::class, function (Faker $faker) {
         'title'=>$faker->words(4,true),
         'description'=>$faker->sentences(4,true),
         'start_time'=>$start_time,
-        'end_time'=>$end_time
+        'end_time'=>$end_time,
+        'venue_id'=>rand(1,15)
     ];
 });
