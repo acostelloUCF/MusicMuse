@@ -16,6 +16,8 @@ $factory->define(App\Venue::class, function (Faker $faker) {
         'state'=>$faker->stateAbbr(),
         'postal_code'=>$faker->postcode(),
         'name'=>$faker->words(4,true),
-        'description'=>$faker->sentences(4,true)
+        'description'=>$faker->sentences(4,true),
+        'phone'=>$faker->tollFreePhoneNumber(),
+        'website'=>$faker->url()
     ];
 });

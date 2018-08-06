@@ -12,9 +12,9 @@ const mapHeight = window.innerHeight;
 const ConcertMap = compose(
     withProps({
         googleMapURL:
-            "https://maps.googleapis.com/maps/api/js?key=AIzaSyA_rH0TsT7xBw-N_SHDUt7LiDCCc4OmTbM&v=3.exp&libraries=geometry,drawing,places",
+            "https://maps.googleapis.com/maps/api/js?key=AIzaSyAbN6mCVC4Lm085Rvq_yAqXZfKe7Bs3XiE&v=3.exp&libraries=geometry,drawing,places",
         loadingElement: <div style={{ height: `100%` }} />,
-        containerElement: <div style={{ height: `400px` }} />,
+        containerElement: <div style={{ height: `300px` }} />,
         mapElement: <div style={{ height: `100%` }} />
     }),
     withScriptjs,

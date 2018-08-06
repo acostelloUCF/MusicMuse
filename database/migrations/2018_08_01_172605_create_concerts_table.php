@@ -20,6 +20,7 @@ class CreateConcertsTable extends Migration
             $table->integer('venue_id')->unsigned();
             $table->dateTimeTz('start_time');
             $table->dateTimeTz('end_time');
+            $table->decimal('price',8,2);
             $table->timestamps();
         });
     }

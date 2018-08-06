@@ -23844,45 +23844,24 @@ if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
 var SocialFooter = function SocialFooter() {
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         "footer",
-        { id: "socialMediaFooter", className: "footer bg-black py-2" },
+        { id: "socialMediaFooter", className: "footer bg-black" },
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             "div",
-            { className: "container" },
+            { className: "container text-center mt-3" },
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                "div",
-                { className: "row justify-content-center" },
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "span",
-                    { className: "p-2" },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "a",
-                        { href: "https://twitter.com" },
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("i", { className: "fab fa-twitter-square fa-3x" })
-                    )
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "span",
-                    { className: "p-2" },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "a",
-                        { href: "https://instagram.com" },
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("i", { className: "fab fa-instagram fa-3x" })
-                    )
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "span",
-                    { className: "p-2" },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "a",
-                        { href: "https://facebook.com" },
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("i", { className: "fab fa-facebook-square fa-3x" })
-                    )
-                )
+                "a",
+                { href: "https://twitter.com" },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("i", { className: "fab fa-twitter-square fa-3x" })
             ),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                "div",
-                { className: "row justify-content-center text-white" },
-                "Copyright \xA9 2018 MusicMuse"
+                "a",
+                { href: "https://instagram.com", className: "p-2" },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("i", { className: "fab fa-instagram fa-3x" })
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                "a",
+                { href: "https://facebook.com" },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("i", { className: "fab fa-facebook-square fa-3x" })
             )
         )
     );
@@ -90926,14 +90905,14 @@ var BandShow = function (_Component) {
     }
 
     _createClass(BandShow, [{
-        key: "componentDidMount",
+        key: 'componentDidMount',
         value: function componentDidMount() {
             var id = this.props.match.params.id;
 
             this.props.fetchBand(id);
         }
     }, {
-        key: "render",
+        key: 'render',
         value: function render() {
             var band = this.props.band;
 
@@ -90943,40 +90922,52 @@ var BandShow = function (_Component) {
             }
 
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                "section",
-                { id: "bandShow", className: "mt-4" },
+                'section',
+                { id: 'bandShow', className: 'mt-4' },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "div",
-                    { className: "container" },
+                    'div',
+                    { className: 'container' },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "div",
-                        { className: "row" },
+                        'div',
+                        { className: 'row' },
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            "div",
-                            { className: "card" },
+                            'div',
+                            { className: 'card' },
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                "div",
-                                { className: "card-header bg-white" },
+                                'div',
+                                { className: 'card-header bg-white' },
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    "h2",
-                                    { className: "text-capitalize" },
+                                    'h2',
+                                    { className: 'text-capitalize' },
                                     band.name
                                 ),
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    "div",
-                                    { className: "card-subtitle text-muted" },
+                                    'div',
+                                    { className: 'card-subtitle text-muted' },
                                     band.state
                                 )
                             ),
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                "div",
-                                { className: "card-body" },
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("br", null),
-                                band.description
+                                'div',
+                                { className: 'card-body' },
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'div',
+                                    { className: 'row' },
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'div',
+                                        { className: 'col-md-4' },
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: 'https://source.unsplash.com/random/1200x1100', alt: '', className: 'img-fluid rounded py-2' })
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'div',
+                                        { className: 'col' },
+                                        band.description
+                                    )
+                                )
                             ),
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                "div",
-                                { className: "card-footer bg-white text-right text-primary" },
+                                'div',
+                                { className: 'card-footer bg-white text-right text-primary' },
                                 _.map(band.tags, __WEBPACK_IMPORTED_MODULE_3__components_tag_render__["a" /* renderTag */])
                             )
                         )
@@ -91555,14 +91546,30 @@ var ConcertShow = function (_Component) {
     }
 
     _createClass(ConcertShow, [{
-        key: "componentDidMount",
+        key: 'componentDidMount',
         value: function componentDidMount() {
             var id = this.props.match.params.id;
 
             this.props.fetchConcert(id);
         }
     }, {
-        key: "render",
+        key: 'renderPrice',
+        value: function renderPrice(price) {
+            if (price) {
+                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: 'd-flex justify-content-end mt-auto' },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'div',
+                        { className: 'display-4 bg-primary text-white rounded p-2' },
+                        '$',
+                        price
+                    )
+                );
+            }
+        }
+    }, {
+        key: 'render',
         value: function render() {
             var concert = this.props.concert;
 
@@ -91573,84 +91580,102 @@ var ConcertShow = function (_Component) {
 
             console.log(concert);
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                "section",
-                { id: "showConcert", className: "mt-4" },
+                'section',
+                { id: 'showConcert', className: 'my-5' },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "div",
-                    { className: "container bg-white" },
+                    'div',
+                    { className: 'container bg-white rounded' },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "div",
-                        { className: "row mb-2 concert-list-item h-100" },
+                        'div',
+                        { className: 'row my-4' },
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            "div",
-                            { className: "col-md-4 text-center d-none d-sm-inline" },
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", {
-                                src: "https://source.unsplash.com/random/800x1100",
-                                alt: "",
-                                className: "img-fluid rounded"
+                            'div',
+                            { className: 'col-md-4 text-center pt-2 d-none d-md-block' },
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', {
+                                src: 'https://source.unsplash.com/random/800x1100',
+                                alt: '',
+                                className: 'img-fluid rounded mx-auto'
                             })
                         ),
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            "div",
-                            { className: "col" },
+                            'div',
+                            { className: 'col pt-2' },
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                "div",
-                                { className: "card h-100" },
+                                'div',
+                                { className: 'card h-100' },
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    "div",
-                                    { className: "card-header bg-dark concert-title-header" },
+                                    'div',
+                                    { className: 'card-header bg-dark concert-title-header' },
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        "h2",
-                                        { className: "text-capitalize text-white concert-title" },
+                                        'h2',
+                                        { className: 'text-capitalize text-white concert-title' },
                                         concert.title
                                     )
                                 ),
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    "div",
-                                    { className: "card-body" },
+                                    'div',
+                                    { className: 'card-body d-flex flex-column' },
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        "div",
-                                        { className: "card-title" },
+                                        'div',
+                                        { className: 'card-title' },
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                            "h4",
+                                            'h4',
                                             null,
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                                 __WEBPACK_IMPORTED_MODULE_6_react_moment___default.a,
-                                                { format: "dddd, MMMM Do YYYY h:mm A" },
+                                                { format: 'dddd, MMMM Do YYYY h:mm A' },
                                                 concert.start_time
                                             )
                                         )
                                     ),
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        "p",
-                                        null,
+                                        'h5',
+                                        { className: 'card-subtitle text-muted text-capitalize' },
                                         concert.venue.name
                                     ),
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        "p",
+                                        'p',
+                                        null,
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            'a',
+                                            { href: concert.venue.website },
+                                            concert.venue.website
+                                        )
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'p',
+                                        null,
+                                        concert.venue.phone
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'p',
                                         null,
                                         concert.venue.street
                                     ),
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        "p",
+                                        'p',
                                         null,
                                         concert.venue.city + ', ' + concert.venue.state + ' ' + concert.venue.postal_code
-                                    )
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('p', null),
+                                    this.renderPrice(concert.price)
                                 )
                             )
                         )
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "div",
-                        { className: "row" },
+                        'div',
+                        { className: 'row' },
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            "div",
-                            { className: "col" },
-                            concert.description
+                            'div',
+                            { className: 'col p-2 m-2' },
+                            concert.description,
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('p', { className: 'lead' })
                         ),
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            "div",
-                            { className: "col-md-4" },
+                            'div',
+                            { className: 'col-md-6 col-lg-6 col-xl-4 p-2 m-2' },
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__concert_map__["a" /* default */], { isMarkerShown: true, lat: concert.venue.lat, lng: concert.venue.lng })
                         )
                     )
@@ -91688,9 +91713,9 @@ function mapStateToProps(_ref, ownProps) {
 var mapHeight = window.innerHeight;
 
 var ConcertMap = Object(__WEBPACK_IMPORTED_MODULE_1_recompose__["a" /* compose */])(Object(__WEBPACK_IMPORTED_MODULE_1_recompose__["b" /* withProps */])({
-    googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyA_rH0TsT7xBw-N_SHDUt7LiDCCc4OmTbM&v=3.exp&libraries=geometry,drawing,places",
+    googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyAbN6mCVC4Lm085Rvq_yAqXZfKe7Bs3XiE&v=3.exp&libraries=geometry,drawing,places",
     loadingElement: __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", { style: { height: "100%" } }),
-    containerElement: __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", { style: { height: "400px" } }),
+    containerElement: __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", { style: { height: "300px" } }),
     mapElement: __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", { style: { height: "100%" } })
 }), __WEBPACK_IMPORTED_MODULE_2_react_google_maps__["withScriptjs"], __WEBPACK_IMPORTED_MODULE_2_react_google_maps__["withGoogleMap"])(function (props) {
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(

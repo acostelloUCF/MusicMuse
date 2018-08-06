@@ -23,6 +23,8 @@ class CreateVenuesTable extends Migration
             $table->string('city');
             $table->string('state',2);
             $table->string('postal_code');
+            $table->string('phone');
+            $table->string('website');
             $table->timestamps();
         });
     }

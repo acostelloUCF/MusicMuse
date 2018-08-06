@@ -14,7 +14,9 @@ class Venue extends Model
         'street',
         'city',
         'state',
-        'postal_code'
+        'postal_code',
+        'phone',
+        'website'
     ];
 
     protected $casts = [
