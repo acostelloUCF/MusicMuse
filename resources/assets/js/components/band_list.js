@@ -11,6 +11,7 @@ class BandList extends Component {
         return (
             <div className="col-lg-4 mb-3 mt-2" key={band.id}>
                 <div className="card">
+                    
                     <Link to={`/bands/${band.id}`}>
                         <img
                             src="https://source.unsplash.com/random/700x700"

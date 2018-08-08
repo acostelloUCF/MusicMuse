@@ -4,17 +4,28 @@
 // Bootstrap
 @import "~bootstrap/scss/bootstrap";
 
+//react-table
+@import '~react-table/react-table.css';
+
 $primary-overlay: rgba(0, 0, 0, 0.9);
 
 html {
     position: relative;
-    min-height: 100%;
+    min-height: 100vh;
 }
 
 body {
     padding-top: 90px;
     background-color: #333;
     margin-bottom: 80px;
+}
+
+.flex-container{
+    height:calc(100vh - 170px);
+}
+
+.login-title{
+    // border-bottom:3px $primary solid;
 }
 
 .footer {
@@ -139,7 +150,6 @@ body {
         max-height: 100%;
     }
    
-
     h2.concert-title {
         // border-bottom: 2px $primary solid;
     }
@@ -149,12 +159,36 @@ body {
     }
 }
 
+.concert-description-box{
+    border: 3px $primary solid;
+}
+
+
 #showConcert{
     .row{
        max-height:500px; 
     }
+}
+
+
+#adminHome{
+
+    div.rt-tr {
+        align-items: center;
+    }
+
+    .card-header{
+        background:$primary;
+    }
+
+    .nav-item:not(:active){
+        background:$primary;
+        border-color:$white;
+    }
 
 }
+
+
 
 @media (max-width: 768px) {
     #showcase {

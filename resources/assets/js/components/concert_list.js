@@ -26,8 +26,8 @@ class ConcertList extends Component {
                 key={concert.id}
 
             >
-                <div className="col-4 text-center p-2 d-none d-sm-inline">
-                    <Link to={`/concerts/${concert.id}`}>
+                <div className="col-4 text-center p-2 d-none d-md-inline">
+                    <Link to={`/concerts/${concert.id}`} >
                         <img
                             src="https://source.unsplash.com/random/800x1100"
                             className="img-fluid rounded"

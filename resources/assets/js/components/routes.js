@@ -14,6 +14,8 @@ import Tags from '../containers/tags';
 import TagShow from '../components/tag_show';
 import PostShow from '../components/post_show';
 import ConcertShow from '../components/concert_show';
+import AdminLogin from '../components/admin_login';
+import AdminHome from './admin_home';
 
 
 class Routes extends Component {
@@ -34,6 +36,8 @@ class Routes extends Component {
                     <Route path="/concerts" component={Concerts}/>
                     <Route path="/tags/:id" component={TagShow}/>
                     <Route exact path="/tags" component={Tags}/>
+                    <Route exact path="/admin" component={AdminLogin}/>
+                    <Route exact path="/admin/dashboard" component={AdminHome}/>
                     <Route exact path="/" component={Home}/>
                     <Route component={NoMatch}/>
                 </Switch>

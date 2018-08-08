@@ -37,16 +37,16 @@ class ConcertShow extends Component {
         return (
             <section id="showConcert" className="my-5">
                 <div className="container bg-white rounded">
-                    <div className="row my-4">
-                        <div className="col-md-4 text-center pt-2 d-none d-md-block">
+                    <div className="row d-flex">
+                        <div className="col-md-4 py-1 text-center d-none d-md-block align-self-center">
                             <img
                                 src="https://source.unsplash.com/random/800x1100"
                                 alt=""
-                                className="img-fluid rounded mx-auto"
+                                className="img-fluid rounded"
                             />
                         </div>
 
-                        <div className="col pt-2">
+                        <div className="col p-1">
                             <div className="card h-100">
                                 <div className="card-header bg-dark concert-title-header">
                                     <h2 className="text-capitalize text-white concert-title">{concert.title}</h2>
@@ -77,7 +77,7 @@ class ConcertShow extends Component {
                             </div>
                         </div>
                     </div>
-                    <div className="row">
+                    <div className="row bg-dark text-white concert-description-box">
                         <div className="col p-2 m-2">
                             {concert.description}
                             <p className="lead" />
@@ -88,6 +88,7 @@ class ConcertShow extends Component {
                     </div>
                 </div>
                 <SocialFooter />
+                <div style={{height:60}}></div>
             </section>
         );
     }
