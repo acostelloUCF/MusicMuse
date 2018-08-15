@@ -39,6 +39,7 @@ class Bands extends Component {
                     <BandFilter onSearchTermChange={bandSearch} />
                     <BandList bands={bands} />
                 </div>
+
                 <SocialFooter/>
             </section>
         );

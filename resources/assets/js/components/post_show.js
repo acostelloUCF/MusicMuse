@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {fetchPost} from '../actions';
-import { renderLoadingSpinner } from "../components/loading_spinner";
-import { renderTag } from "../components/tag_render";
+import { renderLoadingSpinner } from "./loading_spinner";
+import { renderTag } from "./tag_render";
 import SocialFooter from './social_footer';
 
 

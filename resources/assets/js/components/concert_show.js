@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchConcert } from '../actions';
-import { renderLoadingSpinner } from '../components/loading_spinner';
+import { renderLoadingSpinner } from './loading_spinner';
 import SocialFooter from './social_footer';
 import ConcertMap from './concert_map';
 import Moment from 'react-moment';
@@ -33,7 +33,6 @@ class ConcertShow extends Component {
             return renderLoadingSpinner();
         }
 
-        console.log(concert);
         return (
             <section id="showConcert" className="my-5">
                 <div className="container bg-white rounded">

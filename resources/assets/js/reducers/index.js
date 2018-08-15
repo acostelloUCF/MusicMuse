@@ -4,6 +4,7 @@ import BandReducer from "./reducer_bands";
 import PostReducer from "./reducer_posts"
 import TagReducer from "./reducer_tags";
 import ConcertReducer from "./reducer_concerts";
+import { reducer as formReducer } from 'redux-form'
 
 
 const rootReducer = combineReducers({
@@ -11,7 +12,8 @@ const rootReducer = combineReducers({
   bands: BandReducer,
   posts: PostReducer,
   tags: TagReducer,
-  concerts: ConcertReducer
+  concerts: ConcertReducer,
+  form:formReducer
 });
 
 export default rootReducer;

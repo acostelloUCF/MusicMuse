@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\BlogPost;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class BlogPostController extends Controller
 {
@@ -25,7 +26,26 @@ class BlogPostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        $validator = $this->validator($request->all());
+
+        if($validator->fails()){
+            return response(["errors"=>$validator->errors()],422);
+        }
+        
+        $post = BlogPost::create($request->all());
+        $post->save();
+            
+        $post->errors= new class(){};
+
+        return $post;
+    }
+
+    private function validator($data){
+        return Validator::make($data,[
+            'title' => 'required|unique:blog_posts|max:100',
+            'post' => 'required|max:500',
+        ]);
     }
 
     /**

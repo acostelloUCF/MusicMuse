@@ -12,10 +12,12 @@ class TagController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return Tag::with('bands','blog_posts')->get();
-        //return Tag::all();
+        $orderBy = $request->query('orderBy', 'name');
+        $searchTerm = $request->input('searchTerm');
+        return Tag::with('bands','blog_posts')->orderBy($orderBy)->where('name','like','%'.$searchTerm.'%')->get();
+
     }
 
     /**

@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_ROOT = 'http://localhost:8000/api';
+const API_ROOT = 'https://localhost:44300/api';
 
 export const FETCH_LATEST_POST = 'FETCH_LATEST_POST';
 export const FETCH_POST_LIST = 'FETCH_POST_LIST';
@@ -12,7 +12,7 @@ export const FETCH_TAGS = 'FETCH_TAGS';
 export const FETCH_TAG = 'FETCH_TAG';
 export const FETCH_CONCERTS = 'FETCH_CONCERTS';
 export const FETCH_CONCERT = 'FETCH_CONCERT';
-
+export const CREATE_POST = 'CREATE_POST';
 
 
 
@@ -70,8 +70,11 @@ export function fetchBand(id){
     };
 }
 
-export function fetchTags(){
-    const url = `${API_ROOT}/tags`;
+export function fetchTags(searchTerm=null){
+    var url = `${API_ROOT}/tags`;
+    if(searchTerm){
+        url = `${url}?searchTerm=${searchTerm}`;
+    }
     const request = axios.get(url);
 
     return{
@@ -110,3 +113,14 @@ export function fetchConcert(id){
     };
 }
 
+export function createPost(props){
+    const url = `${API_ROOT}/posts`;
+    const request = axios.post(url,props);
+
+    return{
+        type:CREATE_POST,
+        payload:request
+    }
+
+}
+    

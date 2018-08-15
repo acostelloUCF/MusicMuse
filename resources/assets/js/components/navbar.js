@@ -5,7 +5,7 @@ class Navbar extends Component {
     constructor(props) {
         super(props);
 
-        this.state = { isAdmin: true };
+        this.state = { isAdmin: false };
     }
 
     renderAdminTab() {

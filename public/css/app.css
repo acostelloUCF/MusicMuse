@@ -10647,9 +10647,8 @@ body {
   background: #6574cd;
 }
 
-#adminHome .nav-item:not(:active) {
-  background: #6574cd;
-  border-color: #fff;
+#adminHome .nav-link:not(.active) {
+  color: #fff;
 }
 
 @media (max-width: 768px) {

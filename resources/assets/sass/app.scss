@@ -181,9 +181,8 @@ body {
         background:$primary;
     }
 
-    .nav-item:not(:active){
-        background:$primary;
-        border-color:$white;
+    .nav-link:not(.active){
+        color:$white;
     }
 
 }
