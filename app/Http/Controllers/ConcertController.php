@@ -14,7 +14,7 @@ class ConcertController extends Controller
      */
     public function index()
     {
-        return Concert::with('bands','venue')->where('start_time','<','NOW()')->get();
+        return Concert::with('bands','venue')->where('start_time','>=','NOW()')->get();
     }
 
     /**
