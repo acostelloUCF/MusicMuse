@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_ROOT = 'https://localhost:44300/api';
+const API_ROOT = 'https://shmeel.life/api';
 
 export const FETCH_LATEST_POST = 'FETCH_LATEST_POST';
 export const FETCH_POST_LIST = 'FETCH_POST_LIST';

@@ -1,18 +1,18 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { fetchBand } from '../actions';
-import { renderTag } from './tag_render';
-import { renderLoadingSpinner } from './loading_spinner';
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import {fetchBand} from '../actions';
+import {renderTag} from './tag_render';
+import {renderLoadingSpinner} from './loading_spinner';
 import SocialFooter from './social_footer';
 
 class BandShow extends Component {
     componentDidMount() {
-        const { id } = this.props.match.params;
+        const {id} = this.props.match.params;
         this.props.fetchBand(id);
     }
 
     render() {
-        const { band } = this.props;
+        const {band} = this.props;
 
         if (!band) {
             return renderLoadingSpinner();
@@ -30,7 +30,8 @@ class BandShow extends Component {
                             <div className="card-body">
                                 <div className="row">
                                     <div className="col-md-4">
-                                        <img src="https://source.unsplash.com/random/1200x1100" alt="" className="img-fluid rounded py-2"/>
+                                        <img src="https://source.unsplash.com/random/1200x1100" alt=""
+                                             className="img-fluid rounded py-2"/>
                                     </div>
                                     <div className="col">{band.description}</div>
                                 </div>
@@ -41,17 +42,17 @@ class BandShow extends Component {
                         </div>
                     </div>
                 </div>
-                <SocialFooter />
+                <SocialFooter/>
             </section>
         );
     }
 }
 
-function mapStateToProps({ bands }, ownProps) {
-    return { band: bands[ownProps.match.params.id] };
+function mapStateToProps({bands}, ownProps) {
+    return {band: bands[ownProps.match.params.id]};
 }
 
 export default connect(
     mapStateToProps,
-    { fetchBand }
+    {fetchBand}
 )(BandShow);

@@ -4,7 +4,7 @@ use Faker\Generator as Faker;
 
 $factory->define(App\Concert::class, function (Faker $faker) {
 
-    $start_time = $faker->dateTimeThisYear('2018-12-31','America/New_York');
+    $start_time = $faker->dateTimeBetween('now','2018-12-31','America/New_York');
     $end_time = clone $start_time;
     $end_time->modify('+ 1 hour');
 

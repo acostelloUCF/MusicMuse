@@ -15,13 +15,13 @@ class AdminPostsCreate extends Component {
 
     render() {
         const {tags} = this.props;
-        console.log(tags);
+
         return (
             <div>
                 <div className="container my-4">
                     <div className="row">
                         <div className="col-10">
-                            <PostForm onSubmit={this.props.createPost} />
+                            <PostForm onSubmit={this.props.createPost} tags={tags} />
                         </div>
                     </div>
                 </div>

@@ -22,6 +22,8 @@ Route::group(['prefix' => 'api'], function () {
     Route::post('/login', 'AuthController@login');
     Route::get('/reset_password', 'AuthController@requestPasswordReset');
     Route::post('/reset_password', 'AuthController@resetPassword');
+    Route::get('/validateJWT', 'AuthController@validateJWT');
+
 
 });
 

@@ -31,7 +31,7 @@ class PasswordReset extends Mailable
      */
     public function build()
     {
-        $url = env('APP_URL').'/password_reset?token='.$this->token;
+        $url = env('APP_URL').'/password_reset/'.$this->token;
         return $this->view('emails.password_reset')
         ->with('url',$url)
         ->subject('Password Reset Link');

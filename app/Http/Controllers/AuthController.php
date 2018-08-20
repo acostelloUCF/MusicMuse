@@ -3,15 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\ApiKey;
-use App\User;
 use App\Mail\PasswordReset;
-
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Support\Facades\Mail;
 use Lcobucci\JWT\Builder;
 use Lcobucci\JWT\Signer\Hmac\Sha256;
 use \DateTime;
@@ -32,7 +31,7 @@ class AuthController extends Controller
         }
         //instantiate ApiKey Model Object
         $keyObject = new ApiKey([
-            'key' => $key,
+            'key' => Hash::make($key),
             'user_id' => $user_id,
 
         ]);
@@ -51,7 +50,7 @@ class AuthController extends Controller
             ->setAudience(env('APP_URL')) // Configures the audience (aud claim)
             ->setId($api_key, true) // Configures the id (jti claim), replicating as a header item
             ->setIssuedAt(time()) // Configures the time that the token was issue (iat claim)
-            ->setExpiration(time() + 300) // Configures the expiration time of the token (exp claim)
+            ->setExpiration(time() + 90) // Configures the expiration time of the token (exp claim)
             ->set('user_id', $user->id)
             ->sign($signer, env('API_SIG'))
             ->getToken(); // Retrieves the generated token
@@ -98,7 +97,7 @@ class AuthController extends Controller
 
         //generate JWT
         $signer = new Sha256();
-        $token = $this->generateJWT($key,$user); // Retrieves the generated token
+        $token = $this->generateJWT($key, $user); // Retrieves the generated token
 
         //succes, return JWT + 200
         return Response(
@@ -108,6 +107,17 @@ class AuthController extends Controller
             ],
             200
         );
+    }
+
+    public function logout(){
+        //get token
+        $token = $request->bearerToken();
+        $token = (new Parser())->parse((string) $token);
+
+        //expire api key
+        $user = User::find($token->getClaim('user_id'));
+        $this->expireActiveApiKeys($user);
+
     }
 
     public function requestPasswordReset(Request $request)
@@ -137,7 +147,7 @@ class AuthController extends Controller
         ]);
 
         //send email to user with token
-        //TODO verify domain and use real email
+        //TODO: verify domain and use real email
         Mail::to('alcostello91@gmail.com')->send(new PasswordReset($token));
 
         return Response(
@@ -164,7 +174,7 @@ class AuthController extends Controller
         }
 
         //validate password reset token
-        if (!$this->validatePasswordResetToken($user, $request->input('token'))){
+        if (!$this->validatePasswordResetToken($user, $request->input('token'))) {
             //User not found, return 404
             return Response(
                 [
@@ -193,7 +203,7 @@ class AuthController extends Controller
 
         //generate JWT
         $signer = new Sha256();
-        $token = $this->generateJWT($key,$user); // Retrieves the generated token
+        $token = $this->generateJWT($key, $user); // Retrieves the generated token
 
         //disable any active password reset tokens
         $this->expirePasswordResetTokens($user);
@@ -222,7 +232,8 @@ class AuthController extends Controller
         return $isValidToken;
     }
 
-    private function expirePasswordResetTokens($user){
+    private function expirePasswordResetTokens($user)
+    {
         DB::table('password_resets')->where('expired_at', null)->where('user_id', $user->id)->update(['expired_at' => new DateTime()]);
     }
 

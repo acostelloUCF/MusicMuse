@@ -7,13 +7,16 @@ class PasswordReset extends Component {
     }
 
     render() {
-
+        const {token} = this.props.match.params;
 
         return (
             <div className="container">
                 <div className="row">
                     <div className="col">
-
+                        <div className="form">
+                            <input type="hidden" value={token}/>
+                            <input type="text"/>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -21,3 +24,5 @@ class PasswordReset extends Component {
 
     };
 }
+
+export default PasswordReset;
