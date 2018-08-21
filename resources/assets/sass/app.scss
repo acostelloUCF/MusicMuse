@@ -1,11 +1,15 @@
 // Variables
-@import "variables";
+@import 'variables';
 
 // Bootstrap
-@import "~bootstrap/scss/bootstrap";
+@import '~bootstrap/scss/bootstrap';
 
 //react-table
 @import '~react-table/react-table.css';
+
+//react-slick
+@import '~slick-carousel/slick/slick.css';
+@import '~slick-carousel/slick/slick-theme.css';
 
 $primary-overlay: rgba(0, 0, 0, 0.9);
 
@@ -20,11 +24,35 @@ body {
     margin-bottom: 80px;
 }
 
-.flex-container{
-    height:calc(100vh - 170px);
+#HomeCarousel {
+    img {
+        max-height: 500px;
+        margin: 0 auto;
+    }
+    .slick-dots li button:before {
+        color: $white;
+    }
 }
 
-.login-title{
+#authors img {
+    margin-top: -50px;
+}
+#authors .card:hover {
+    background: $primary;
+    color: $white;
+    i {
+        color: $white;
+    }
+}
+#authors .fab {
+    color: $primary;
+}
+
+.flex-container {
+    height: calc(100vh - 170px);
+}
+
+.login-title {
     // border-bottom:3px $primary solid;
 }
 
@@ -34,7 +62,6 @@ body {
     width: 100%;
     height: 80px;
     line-height: 60px;
-
 }
 
 .navbar {
@@ -73,7 +100,7 @@ body {
     }
 }
 
-#tagShow{
+#tagShow {
     .card-header {
         color: $secondary;
         a {
@@ -88,7 +115,7 @@ body {
 
 #showcase {
     position: relative;
-    background: url("../images/highway.jpeg");
+    background: url('../images/highway.jpeg');
     min-height: 600px;
 
     .primary-overlay {
@@ -118,12 +145,12 @@ body {
     color: $primary;
 }
 
-[data-toggle="collapse"] .fa:before {
-    content: "\f139";
+[data-toggle='collapse'] .fa:before {
+    content: '\f139';
 }
 
-[data-toggle="collapse"].collapsed .fa:before {
-    content: "\f13a";
+[data-toggle='collapse'].collapsed .fa:before {
+    content: '\f13a';
 }
 
 #bandList {
@@ -149,7 +176,7 @@ body {
         max-width: 100%;
         max-height: 100%;
     }
-   
+
     h2.concert-title {
         // border-bottom: 2px $primary solid;
     }
@@ -159,35 +186,29 @@ body {
     }
 }
 
-.concert-description-box{
+.concert-description-box {
     border: 3px $primary solid;
 }
 
-
-#showConcert{
-    .row{
-       max-height:500px; 
+#showConcert {
+    .row {
+        max-height: 500px;
     }
 }
 
-
-#adminHome{
-
+#adminHome {
     div.rt-tr {
         align-items: center;
     }
 
-    .card-header{
-        background:$primary;
+    .card-header {
+        background: $primary;
     }
 
-    .nav-link:not(.active){
-        color:$white;
+    .nav-link:not(.active) {
+        color: $white;
     }
-
 }
-
-
 
 @media (max-width: 768px) {
     #showcase {

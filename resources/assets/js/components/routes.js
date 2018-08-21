@@ -48,10 +48,11 @@ class Routes extends Component {
                         <Route exact path="/tags" component={Tags} />
 
                         {/* ADMIN ROUTES */}
-                        <Route path="/admin/posts/create" component={AdminPostsCreate} />
+                        {/* TODO: finish admin portal */}
+                        {/* <Route path="/admin/posts/create" component={AdminPostsCreate} />
                         <Route exact path="/admin/dashboard" component={AdminHome} />
                         <Route exact path="/admin" component={AdminLogin} />
-                        <Route path="/password_reset/:token" component={PasswordReset} />
+                        <Route path="/password_reset/:token" component={PasswordReset} /> */}
 
 
                         {/* ROOT & 404/NOMATCH */}

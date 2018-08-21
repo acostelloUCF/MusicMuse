@@ -7,6 +7,7 @@ import SocialFooter from '../components/social_footer';
 import {fetchLatestPost} from '../actions';
 import { renderLoadingSpinner } from "../components/loading_spinner";
 import _ from 'lodash';
+import HomeCarousel from '../components/home_carousel';
 
 
 class Home extends Component {
@@ -27,6 +28,7 @@ class Home extends Component {
         return ( 
             <div>
                 <LatestPost latestPost={latestPost}/>
+                <HomeCarousel/>
                 <Showcase/>
                 <SocialFooter/>
             </div>

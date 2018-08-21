@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Concert;
 use Illuminate\Http\Request;
+use \DateTime;
+
 
 class ConcertController extends Controller
 {
@@ -14,7 +16,8 @@ class ConcertController extends Controller
      */
     public function index()
     {
-        return Concert::with('bands','venue')->where('start_time','>=','NOW()')->get();
+        $now = (new DateTime())->format('Y-m-d H:i:s');
+        return Concert::with('bands','venue')->where('start_time','>=',$now)->orderBy('start_time')->get();
     }
 
     /**
