@@ -10802,13 +10802,28 @@ body {
   margin-bottom: 80px;
 }
 
+#HomeCarousel h1 {
+  border-bottom: 3px #6574cd solid;
+}
+
 #HomeCarousel img {
-  max-height: 500px;
+  max-height: calc(100vh - 170px);
   margin: 0 auto;
 }
 
 #HomeCarousel .slick-dots li button:before {
   color: #fff;
+}
+
+#HomeCarousel .slick-list,
+#HomeCarousel .slick-track {
+  height: 100%;
+}
+
+#HomeCarousel .slick-initialized .slick-slide {
+  float: none;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 #authors img {
@@ -10856,7 +10871,24 @@ body {
   padding-left: 0.5rem;
 }
 
-#latestPost .card-header,
+#latestPost .card-header {
+  color: #000;
+}
+
+#latestPost .card-header a {
+  color: #000;
+}
+
+#latestPost .card-body {
+  border-top: 3px #6574cd solid;
+  color: #000;
+}
+
+#latestPost .card-footer {
+  border-top: 1px #6574cd solid;
+  word-wrap: normal !important;
+}
+
 #postList .card-header,
 #bandShow .card-header,
 #contact .card-header,
@@ -10864,7 +10896,6 @@ body {
   color: #000;
 }
 
-#latestPost .card-header a,
 #postList .card-header a,
 #bandShow .card-header a,
 #contact .card-header a,
@@ -10872,7 +10903,6 @@ body {
   color: #000;
 }
 
-#latestPost .card-body,
 #postList .card-body,
 #bandShow .card-body,
 #contact .card-body,
@@ -10881,7 +10911,6 @@ body {
   color: #000;
 }
 
-#latestPost .card-footer,
 #postList .card-footer,
 #bandShow .card-footer,
 #contact .card-footer,
@@ -10919,8 +10948,7 @@ body {
 }
 
 #showcaseImage {
-  -webkit-box-shadow: 2px 2px 5px #6574cd;
-          box-shadow: 2px 2px 5px #6574cd;
+  border: 1px #6574cd solid;
 }
 
 .bg-black {

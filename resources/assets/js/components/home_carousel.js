@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import Slider from 'react-slick';
+import LatestPost from './latest_post';
+import Showcase from './showcase';
+import BandShow from './band_show';
 
 export default class Responsive extends Component {
     render() {
@@ -38,13 +41,22 @@ export default class Responsive extends Component {
             ],
         };
         return (
-            <div className="container my-5" id="HomeCarousel">
+            <div className="m-5" id="HomeCarousel">
                 <Slider {...settings}>
                     <div>
-                        <img className="img-fluid" src="https://source.unsplash.com/random/1280x800" alt="" />
+                        <Showcase />
                     </div>
                     <div>
-                        <img className="img-fluid" src="https://source.unsplash.com/random/1280x800" alt="" />
+                        <div className="container">
+                            <div className="h1 text-white">The Latest News...</div>
+                            <LatestPost latestPost={this.props.latestPost} />
+                        </div>
+                    </div>
+                    <div>
+                        <div className="container">
+                            <div className="h1 text-white">Band Spotlight</div>
+                            <BandShow bandID={4} />
+                        </div>
                     </div>
                     <div>
                         <img className="img-fluid" src="https://source.unsplash.com/random/1280x800" alt="" />

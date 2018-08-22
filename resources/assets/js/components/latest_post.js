@@ -11,19 +11,13 @@ class LatestPost extends Component {
 
         return (
             <section id="latestPost">
-                <div className="container mt-4 mb-3">
-                    <div className="row my-2">
-                        <div className="col">
-                            <div className="card">
-                                <div className="card-header bg-white text-capitalize h2">{latestPost.title}</div>
-                                <div className="card-body">
-                                    <p>{latestPost.post}</p>
-                                </div>
-                                <div className="card-footer text-primary bg-white text-right">
-                                    {_.map(latestPost.tags, renderTag)}
-                                </div>
-                            </div>
-                        </div>
+                <div className="card">
+                    <div className="card-header bg-white text-capitalize h2">{latestPost.title}</div>
+                    <div className="card-body">
+                        <p>{latestPost.post}</p>
+                    </div>
+                    <div className="card-footer text-primary bg-white text-right">
+                        {_.map(latestPost.tags, renderTag)}
                     </div>
                 </div>
             </section>

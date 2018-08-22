@@ -25,12 +25,25 @@ body {
 }
 
 #HomeCarousel {
+    h1 {
+        border-bottom: 3px $primary solid;
+    }
     img {
-        max-height: 500px;
+        max-height: calc(100vh - 170px);
         margin: 0 auto;
     }
     .slick-dots li button:before {
         color: $white;
+    }
+
+    .slick-list,.slick-track{
+        height:100%
+    }
+
+    .slick-initialized .slick-slide {
+        float: none;
+        display: inline-block;
+        vertical-align: middle;
     }
 }
 
@@ -50,10 +63,6 @@ body {
 
 .flex-container {
     height: calc(100vh - 170px);
-}
-
-.login-title {
-    // border-bottom:3px $primary solid;
 }
 
 .footer {
@@ -79,7 +88,24 @@ body {
     }
 }
 
-#latestPost,
+#latestPost {
+    .card-header {
+        color: $secondary;
+        a {
+            color: $secondary;
+        }
+    }
+    .card-body {
+        border-top: 3px $primary solid;
+        color: $secondary;
+    }
+    .card-footer {
+        border-top: 1px $primary solid;
+        word-wrap: normal !important;
+    }
+
+}
+
 #postList,
 #bandShow,
 #contact,
@@ -129,7 +155,7 @@ body {
 }
 
 #showcaseImage {
-    box-shadow: 2px 2px 5px $primary;
+    border: 1px $primary solid;
 }
 
 .bg-black {

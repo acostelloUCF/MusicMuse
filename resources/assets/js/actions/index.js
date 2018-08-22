@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_ROOT = 'https://shmeel.life/api';
+const API_ROOT = 'https://musicmuse.agency/api';
 // const API_ROOT = 'https://localhost:44300/api';
 
 

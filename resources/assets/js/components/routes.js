@@ -9,7 +9,7 @@ import Contact from './contact';
 import Concerts from '../containers/concerts';
 import NoMatch from './no_match';
 import Home from '../containers/home';
-import BandShow from './band_show';
+import Band from './band';
 import Tags from '../containers/tags';
 import TagShow from './tag_show';
 import PostShow from './post_show';
@@ -20,7 +20,6 @@ import AdminPostsCreate from './admin/admin_posts_create';
 import PasswordReset from './admin/password_reset';
 
 class Routes extends Component {
-
     render() {
         return (
             <BrowserRouter>
@@ -32,7 +31,7 @@ class Routes extends Component {
                         <Route path="/news" component={News} />
 
                         {/* BANDS ROUTES */}
-                        <Route path="/bands/:id" component={BandShow} />
+                        <Route path="/bands/:id" component={Band} />
                         <Route exact path="/bands" component={Bands} />
 
                         {/* CONCERTS ROUTES */}
@@ -53,7 +52,6 @@ class Routes extends Component {
                         <Route exact path="/admin/dashboard" component={AdminHome} />
                         <Route exact path="/admin" component={AdminLogin} />
                         <Route path="/password_reset/:token" component={PasswordReset} /> */}
-
 
                         {/* ROOT & 404/NOMATCH */}
                         <Route exact path="/" component={Home} />
