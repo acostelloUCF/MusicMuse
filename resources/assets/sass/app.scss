@@ -86,6 +86,9 @@ body {
             padding-left: 0.5rem;
         }
     }
+    .nav-link{
+        color:$white;
+    }
 }
 
 #latestPost {
@@ -167,9 +170,9 @@ body {
     color: $primary;
 }
 
-.nav-item {
-    color: $primary;
-}
+// .nav-item {
+//     color: $primary;
+// }
 
 [data-toggle='collapse'] .fa:before {
     content: '\f139';
@@ -203,10 +206,6 @@ body {
         max-height: 100%;
     }
 
-    h2.concert-title {
-        // border-bottom: 2px $primary solid;
-    }
-
     .list-group {
         overflow: auto;
     }
@@ -222,19 +221,19 @@ body {
     }
 }
 
-#adminHome {
-    div.rt-tr {
-        align-items: center;
-    }
+// #adminHome {
+//     div.rt-tr {
+//         align-items: center;
+//     }
 
-    .card-header {
-        background: $primary;
-    }
+//     .card-header {
+//         background: $primary;
+//     }
 
-    .nav-link:not(.active) {
-        color: $white;
-    }
-}
+//     .nav-link:not(.active) {
+//         color: $white;
+//     }
+// }
 
 @media (max-width: 768px) {
     #showcase {

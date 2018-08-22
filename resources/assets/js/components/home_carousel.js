@@ -58,15 +58,6 @@ export default class Responsive extends Component {
                             <BandShow bandID={4} />
                         </div>
                     </div>
-                    <div>
-                        <img className="img-fluid" src="https://source.unsplash.com/random/1280x800" alt="" />
-                    </div>
-                    <div>
-                        <img className="img-fluid" src="https://source.unsplash.com/random/1280x800" alt="" />
-                    </div>
-                    <div>
-                        <img className="img-fluid" src="https://source.unsplash.com/random/1280x800" alt="" />
-                    </div>
                 </Slider>
             </div>
         );
