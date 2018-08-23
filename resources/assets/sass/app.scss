@@ -37,13 +37,18 @@ body {
     }
 
     .slick-list,.slick-track{
-        height:100%
+        height:80%;
     }
 
     .slick-initialized .slick-slide {
         float: none;
         display: inline-block;
         vertical-align: middle;
+    }
+
+    .card{
+        max-height:500px;
+        //min-width:400px;
     }
 }
 

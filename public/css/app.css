@@ -10817,13 +10817,17 @@ body {
 
 #HomeCarousel .slick-list,
 #HomeCarousel .slick-track {
-  height: 100%;
+  height: 80%;
 }
 
 #HomeCarousel .slick-initialized .slick-slide {
   float: none;
   display: inline-block;
   vertical-align: middle;
+}
+
+#HomeCarousel .card {
+  max-height: 500px;
 }
 
 #authors img {
