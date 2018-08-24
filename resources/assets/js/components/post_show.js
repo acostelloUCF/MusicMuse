@@ -4,6 +4,7 @@ import {fetchPost} from '../actions';
 import { renderLoadingSpinner } from "./loading_spinner";
 import { renderTag } from "./tag_render";
 import SocialFooter from './social_footer';
+import {Link} from 'react-router-dom';
 
 
 
@@ -22,9 +23,9 @@ class PostShow extends Component {
 
         return ( 
             <section id="postShow">
-                <div className="container  mt-4">
+                <div className="container  mt-5">
                     <div className="row">
-                        <div className="col">
+                        <div className="col-12">
                             <div className="card">
                                 <div className="card-header bg-white text-capitalize h2">
                                     <h2>{post.title}</h2>
@@ -36,6 +37,9 @@ class PostShow extends Component {
                                     {_.map(post.tags,renderTag)}
                                 </div>
                             </div>
+                        </div>
+                        <div className="col-12 text-center my-3">
+                            <Link to="/news" className="btn btn-primary btn-lg text-white">See All News</Link>
                         </div>
                     </div>
                 </div>

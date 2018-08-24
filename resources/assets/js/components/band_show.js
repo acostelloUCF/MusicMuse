@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { fetchBand } from '../actions';
 import { renderTag } from './tag_render';
 import { renderLoadingSpinner } from './loading_spinner';
+import {Link} from 'react-router-dom';
+
 
 class BandShow extends Component {
     componentDidMount() {
@@ -41,6 +43,12 @@ class BandShow extends Component {
                             <div className="card-footer bg-white text-right text-primary">
                                 {_.map(band.tags, renderTag)}
                             </div>
+                        </div>
+
+                        <div className="col-12 text-center my-3">
+                            <Link to="/bands" className="btn btn-primary btn-lg text-white">
+                                See All Bands
+                            </Link>
                         </div>
                     </div>
                 </div>

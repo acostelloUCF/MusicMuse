@@ -34,6 +34,7 @@
         "react-spinners": "^0.3.3",
         "react-table": "^6.8.6",
         "react-tag-input": "^5.1.2",
+        "react-truncate-html": "^0.1.7",
         "reactstrap": "^6.3.0",
         "recompose": "^0.28.2",
         "redux": "^4.0.0",

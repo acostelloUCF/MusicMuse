@@ -10815,9 +10815,14 @@ body {
   color: #fff;
 }
 
-#HomeCarousel .slick-list,
-#HomeCarousel .slick-track {
-  height: 80%;
+#HomeCarousel .slick-prev {
+  left: 1% !important;
+  z-index: 1;
+}
+
+#HomeCarousel .slick-next {
+  right: 1% !important;
+  z-index: 1;
 }
 
 #HomeCarousel .slick-initialized .slick-slide {
@@ -10827,7 +10832,14 @@ body {
 }
 
 #HomeCarousel .card {
-  max-height: 500px;
+  max-height: calc(100vh - 170px);
+}
+
+#HomeCarousel .card-text {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  display: block;
 }
 
 #authors img {
@@ -10982,25 +10994,24 @@ body {
 }
 
 #bandList .card-text {
-  overflow: hidden;
   text-overflow: ellipsis;
-  display: -webkit-box;
-  line-height: 16px;
-  /* fallback */
-  max-height: 32px;
-  /* fallback */
-  -webkit-line-clamp: 2;
-  /* number of lines to show */
-  -webkit-box-orient: vertical;
+  overflow: hidden;
+  white-space: nowrap;
+  display: block;
 }
 
 .concert-list-item {
   max-height: 420px;
 }
 
+.concert-list-item .col,
+.concert-list-item .col-lg-3,
+.concert-list-item .col-4 {
+  max-height: 420px;
+}
+
 .concert-list-item img {
-  max-width: 100%;
-  max-height: 100%;
+  max-height: 403px;
 }
 
 .concert-list-item .list-group {

@@ -1,19 +1,21 @@
 import React, { Component } from 'react';
 import Slider from 'react-slick';
-import LatestPost from './latest_post';
+import LatestPost from './post_latest';
 import Showcase from './showcase';
-import BandShow from './band_show';
+import BandSpotlight from './band_spotlight';
 
 export default class Responsive extends Component {
     render() {
         var settings = {
             dots: true,
             infinite: true,
-            speed: 500,
+            speed: 1000,
             slidesToShow: 1,
             slidesToScroll: 1,
             initialSlide: 0,
-            variableWidth:false,
+            autoplay:true,
+            autoplaySpeed:5000,
+            pauseOnHover:true,
             responsive: [
                 {
                     breakpoint: 1024,
@@ -22,6 +24,7 @@ export default class Responsive extends Component {
                         slidesToScroll: 1,
                         infinite: true,
                         dots: true,
+                        arrows:true
                     },
                 },
                 {
@@ -29,7 +32,9 @@ export default class Responsive extends Component {
                     settings: {
                         slidesToShow: 1,
                         slidesToScroll: 1,
-                        initialSlide: 1,
+                        initialSlide: 0,
+                        dots: true,
+                        arrows:false
                     },
                 },
                 {
@@ -37,12 +42,14 @@ export default class Responsive extends Component {
                     settings: {
                         slidesToShow: 1,
                         slidesToScroll: 1,
+                        dots: true,
+                        arrows:false
                     },
                 },
             ],
         };
         return (
-            <div className="m-5" id="HomeCarousel">
+            <div id="HomeCarousel">
                 <Slider {...settings}>
                     <div>
                         <Showcase />
@@ -56,7 +63,7 @@ export default class Responsive extends Component {
                     <div>
                         <div className="container">
                             <div className="h1 text-white">Band Spotlight</div>
-                            <BandShow bandID={4} />
+                            <BandSpotlight bandID={4} />
                         </div>
                     </div>
                 </Slider>

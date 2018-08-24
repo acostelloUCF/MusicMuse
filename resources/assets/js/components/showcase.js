@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 class Showcase extends Component {
     render() {
         return (
-            <section id="showcase" className="py-5 mb-3">
+            <section id="showcase" className="">
                 <div className="primary-overlay text-white">
                     <div className="container h-100">
                         <div className="row h-100 align-items-center">
