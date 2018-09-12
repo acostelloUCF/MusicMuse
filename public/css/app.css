@@ -10831,10 +10831,6 @@ body {
   vertical-align: middle;
 }
 
-#HomeCarousel .card {
-  max-height: calc(100vh - 170px);
-}
-
 #HomeCarousel .card-text {
   text-overflow: ellipsis;
   overflow: hidden;
